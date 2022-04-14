@@ -9,7 +9,7 @@ const NavLink = ({ path, linkName }: NavLinkProps) => {
     return (
         <li>
             <Link href={path}>
-                <a className="mr-4 text-slate-400 bg-slate-600 p-1 rounded-sm hover:bg-zinc-600 transition-colors duration-75 ease-in-out">
+                <a>
                     {linkName}
                 </a>
             </Link>

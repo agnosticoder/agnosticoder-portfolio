@@ -14,13 +14,13 @@ const Layout: FC = ({ children }) => (
                     <div className="min-h-20 pb-4">
                         <h1 className="text-4xl text-slate-800 font-bold mb-4 break-words">Agnosticoder</h1>
                         <ul className="flex">
-                            <NavLink linkName="Home" path="/" />
-                            <NavLink linkName="Blog" path="/" />
+                            {/* <NavLink linkName="Home" path="/" />
+                            <NavLink linkName="Blog" path="/" /> */}
                         </ul>
                     </div>
                 </div>
             </div>
-            <div className="max-w-xl mx-auto">
+            <div className="w-11/12 sm:max-w-xl mx-auto">
                 <main>{children}</main>
             </div>
         </div>
