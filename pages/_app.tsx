@@ -4,11 +4,11 @@ import Layout from '../layouts/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <div className='container'>
+        <>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
-        </div>
+        </>
     );
 }
 

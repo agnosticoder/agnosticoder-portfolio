@@ -1,32 +1,30 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { FC } from 'react';
-import styles from '../styles/modules/Layout.module.scss';
+import NavLink from '../components/NavLink';
 
-const Layout:FC = ({ children }) => (
-    <div className={styles.container}>
+const Layout: FC = ({ children }) => (
+    <>
         <Head>
             <title>App Title will go here</title>
         </Head>
-        <div className="header">
-            <div className="nav-container">
-                <ul className="nav">
-                    {/* <li>
-                        <Link href="/">
-                            <a className="nav-link">Home</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/playground">
-                            <a className="nav-link">Playground</a>
-                        </Link>
-                    </li> */}
-                </ul>
+        <div className="bg-gradient-to-r from-slate-500 to-slate-600 text-slate-800 min-h-screen">
+            <div className="bg-gradient-to-r from-slate-400 to-slate-500">
+                <div className="max-w-xl mx-auto">
+                    <div className="min-h-20 pb-4">
+                        <h1 className="text-4xl text-slate-800 font-bold mb-4 break-words">Agnosticoder</h1>
+                        <ul className="flex">
+                            <NavLink linkName="Home" path="/" />
+                            <NavLink linkName="Blog" path="/" />
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h1>App Name</h1>
+            <div className="max-w-xl mx-auto">
+                <main>{children}</main>
+            </div>
         </div>
-        <main>{children}</main>
-    </div>
+    </>
 );
 
 export default Layout;
