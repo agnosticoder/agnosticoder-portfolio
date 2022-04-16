@@ -12,10 +12,12 @@ const Layout: FC = ({ children }) => (
             <div className="bg-gradient-to-r from-slate-400 to-slate-500">
                 <div className="max-w-xl mx-auto">
                     <div className="min-h-20 pb-4">
-                        <h1 className="text-4xl text-slate-800 font-bold mb-4 break-words">Agnosticoder</h1>
+                        <h1 className="text-4xl text-slate-800 font-bold mb-4 break-words list-none">
+                            <NavLink linkName="Agnosticoder" path="/" />
+                        </h1>
                         <ul className="flex">
-                            {/* <NavLink linkName="Home" path="/" />
-                            <NavLink linkName="Blog" path="/" /> */}
+                            {/* <NavLink linkName="Home" path="/" /> */}
+                            <NavLink linkName="Start Working" path="/work" />
                         </ul>
                     </div>
                 </div>
