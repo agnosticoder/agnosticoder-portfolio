@@ -6,7 +6,7 @@ const Project = ({name, description, link, url, thumbnail, ...rest}:ProjectCardP
 
     return (
         <div className="text-lg">
-            <ProjectCard name={name} description={description} link={link} url={url} thumbnail={thumbnail}/>
+            {/* <ProjectCard name={name} description={description} link={link} url={url} thumbnail={thumbnail}/> */}
         </div>
     );
 }
