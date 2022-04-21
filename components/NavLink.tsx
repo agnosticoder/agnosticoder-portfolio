@@ -2,15 +2,15 @@ import Link from "next/link";
 
 interface NavLinkProps{
     path: string,
-    linkName: string
+    children: JSX.Element | string
 }
 
-const NavLink = ({ path, linkName }: NavLinkProps) => {
+const NavLink = ({ path,children}: NavLinkProps) => {
     return (
         <li>
             <Link href={path}>
                 <a>
-                    {linkName}
+                    {children}
                 </a>
             </Link>
         </li>

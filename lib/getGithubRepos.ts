@@ -1,4 +1,4 @@
-import { ProjectProps } from '../components/Project';
+import { ProjectCardProps } from '../components/ProjectCard';
 
 //Todo: make this more maintainable and manageable
 //? maybe better to fetch all repos and filter them as needed
@@ -21,8 +21,6 @@ const getGithubRepos = async () => {
             };
         });
 
-        console.log('repos', repos);
-
         // filter out repos that are not in the list of projects
         //1 react-binary-to-decimal-convertor
         //2 react-border-radius-previewer
@@ -42,11 +40,9 @@ const getGithubRepos = async () => {
         //18 react-firebase-authentication
         const projects = ['react-binary-to-decimal-convertor', 'react-border-radius-previewer', 'react-calculator', 'react-cause-effect', 'react-coundown-timer', 'react-dynamic-css-variable', 'react-github-status', 'react-hello-app', 'next-iot-mailbox-simulator', 'next-mint-username-nft', 'next-mdx-notes-app', 'next-wave-portal-hardhat-web3', 'solana-web3-front-end', 'solana-web3-back-end', 'fitness-app-next-frontend', 'fitness-app-backend', 'react-firebase-authentication', 'react-csv-to-json-and-vice-versa'];
 
-        const filteredRepos = repos.filter((repo: ProjectProps) => {
+        const filteredRepos = repos.filter((repo: ProjectCardProps) => {
             return projects.includes(repo.name);
         });
-
-        console.log('filteredRepos', filteredRepos.length);
 
         return filteredRepos;
     } catch (err) {

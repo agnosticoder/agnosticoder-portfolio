@@ -8,21 +8,31 @@ const Layout: FC = ({ children }) => (
         <Head>
             <title>App Title will go here</title>
         </Head>
-        <div className="bg-gradient-to-r from-slate-500 to-slate-600 text-slate-800 min-h-screen">
-            <div className="bg-gradient-to-r from-slate-400 to-slate-500">
-                <div className="max-w-xl mx-auto">
-                    <div className="min-h-20 pb-4">
-                        <h1 className="text-4xl text-slate-800 font-bold mb-4 break-words list-none">
-                            <NavLink linkName="Agnosticoder" path="/" />
-                        </h1>
-                        <ul className="flex">
-                            {/* <NavLink linkName="Home" path="/" /> */}
-                            <NavLink linkName="Start Working" path="/work" />
+        <div className="text-slate-800 min-h-screen w-screen">
+            <div>
+                <div className="w-11/12 sm:max-w-3xl mx-auto mb-4">
+                    <div className="min-h-20 pb-4 flex items-end justify-between flex-wrap">
+                        <NavLink path="/">
+                            <h1 className="text-5xl text-stone-300 break-words list-none">
+                                <span className="text-yellow-500">A</span>gnosti
+                                <span className="text-yellow-500">c</span>oder
+                            </h1>
+                        </NavLink>
+                        <ul className="flex gap-2 text-yellow-500">
+                            <NavLink path="/work">
+                                <span className="hover:bg-slate-400">Start Working</span>
+                            </NavLink>
+                            <NavLink path="/">
+                                <span>My Story</span>
+                            </NavLink>
+                            <NavLink path="/">
+                                <span>Links</span>
+                            </NavLink>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div className="w-11/12 sm:max-w-xl mx-auto">
+            <div className="w-11/12 sm:max-w-3xl mx-auto">
                 <main>{children}</main>
             </div>
         </div>
