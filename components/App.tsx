@@ -24,7 +24,7 @@ const App = () => {
                 if (isPhotosWithTotalResults(photos)) {
                     const photosUrls = photos.photos.map((photo) => photo.src.large2x);
                     if (photosUrls.length === temp.length) {
-                        temp = temp.map((project, index) => {
+                        temp = temp.map((project:ProjectCardProps, index:number) => {
                             return {
                                 ...project,
                                 thumbnail: photosUrls[index],

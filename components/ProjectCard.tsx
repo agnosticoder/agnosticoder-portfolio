@@ -38,7 +38,7 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail }: Project
                         {url && (
                             <div>
                                 <a target={name} href={url}>
-                                    <span className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                                    <span className="bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
                                         Gihub
                                     </span>
                                 </a>
@@ -47,7 +47,7 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail }: Project
                         {link ? (
                             <div>
                                 <a target={name} href={link}>
-                                    <span className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                                    <span className="bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
                                         Live Demo
                                     </span>
                                 </a>
@@ -55,7 +55,7 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail }: Project
                         ) : (
                             <div>
                                 <a href="#">
-                                    <span className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                                    <span className="bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
                                         Live Demo
                                     </span>
                                 </a>
