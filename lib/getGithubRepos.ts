@@ -6,6 +6,9 @@ const getGithubRepos = async () => {
     try {
         const response = await fetch(`https://api.github.com/users/agnosticoder/repos?per_page=100`);
         const data = await response.json();
+
+        // console.log('data', data);
+        
         const repos = data.map((repo: any) => {
             return {
                 name: repo.name,
@@ -38,8 +41,11 @@ const getGithubRepos = async () => {
         //14,15 solana-web3-front-end   &&  solana-web3-back-end 
         //16, 17 fitness-app-next-frontend && fitness-app-backend 
         //18 react-firebase-authentication
-        const projects = ['react-binary-to-decimal-convertor', 'react-border-radius-previewer', 'react-calculator', 'react-cause-effect', 'react-coundown-timer', 'react-dynamic-css-variable', 'react-github-status', 'react-hello-app', 'next-iot-mailbox-simulator', 'next-mint-username-nft', 'next-mdx-notes-app', 'next-wave-portal-hardhat-web3', 'solana-web3-front-end', 'solana-web3-back-end', 'fitness-app-next-frontend', 'fitness-app-backend', 'react-firebase-authentication', 'react-csv-to-json-and-vice-versa'];
+        const projects = ['react-border-radius-previewer', 'react-calculator', 'react-coundown-timer', 'next-mint-username-nft', 'next-mdx-notes-app', 'next-wave-portal-hardhat-web3', 'solana-web3-front-end', 'solana-web3-back-end', 'fitness-app-next-frontend', 'react-csv-to-json-and-vice-versa'];
 
+        const projects2 = [{repoName: 'fitness-app-next-frontend', name: 'Workout Logging App'}];
+
+        //ProjectCardProps type aren't exactly the same as the repo, may need a fix
         const filteredRepos = repos.filter((repo: ProjectCardProps) => {
             return projects.includes(repo.name);
         });

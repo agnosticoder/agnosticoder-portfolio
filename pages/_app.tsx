@@ -3,16 +3,17 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from '../layouts/Layout';
 import bg from '../public/Group1.svg';
+import { MDXProvider } from '@mdx-js/react';
+import MDXComponents from '../components/MDXComponents';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
-            <Layout>
-                <div className="inset-0 -z-10 fixed">
-                    <img className="object-cover w-screen h-screen" src={'./background.svg'} alt="Background SVG" />
-                </div>
-                <Component {...pageProps} />
-            </Layout>
+            <MDXProvider components={MDXComponents}>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </MDXProvider>
         </>
     );
 }

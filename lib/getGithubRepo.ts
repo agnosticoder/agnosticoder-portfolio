@@ -1,11 +1,10 @@
+import {octokit} from '../lib/octokit';
+
 const getGithubRepo = async (repoName: string) => {
     try {
-        const response = await fetch(`https://api.github.com/repos/agnosticoder/${repoName}`);
-        const data = await response.json();
+        const {data} = await octokit.request(`GET /repos/agnosticoder/${repoName}`);
 
-        if(data.message === 'Not Found') {
-            return null;
-        }
+        // console.log('data', data);
 
         const repo = {
             name: data.name,

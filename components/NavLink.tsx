@@ -7,7 +7,7 @@ interface NavLinkProps{
 
 const NavLink = ({ path,children}: NavLinkProps) => {
     return (
-        <li>
+        <li className="list-none">
             <Link href={path}>
                 <a>
                     {children}

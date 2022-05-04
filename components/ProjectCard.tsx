@@ -1,6 +1,5 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import Link from "next/link";
-import { FaGithubAlt } from 'react-icons/fa';
-import { BiLinkExternal } from 'react-icons/bi';
 
 export interface ProjectCardProps {
     index: number,
@@ -9,6 +8,8 @@ export interface ProjectCardProps {
     link: string | null
     url: string;
     thumbnail?: string;
+    topics?: string[];
+    mdxSource?: MDXRemoteSerializeResult;
 }
 
 const ProjectCard = ({ index, name, description, link, url, thumbnail }: ProjectCardProps) => {
@@ -24,13 +25,13 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail }: Project
         >
             <div className={`${index % 2 ? 'sm:mr-10' : 'sm:ml-10 sm:flex sm:justify-end sm:text-right'}`}>
                 <div className="flex flex-col h-full justify-center gap-2">
-                    <Link href={`project/${name}`}>
+                    {/* <Link href={`project/${name}`}>
                         <a>
                             <h1 className="text-2xl font-bold mb-4">{name}</h1>
                         </a>
-                    </Link>
+                    </Link> */}
                     {description ? (
-                        <h2>{description}</h2>
+                        <h2 className="text-xl">{description}</h2>
                     ) : (
                         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, consectetur.</h2>
                     )}
@@ -70,19 +71,26 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail }: Project
                 </button>
             </div> */}
             </div>
-            <div className="w-full h-52 sm:w-80 sm:h-52 shrink-0">
-                {thumbnail && (
-                    <div
-                        style={{
-                            backgroundImage: `url(${thumbnail})`,
-                            height: '100%',
-                            width: '100%',
-                            backgroundSize: 'cover',
-                        }}
-                        className="rounded-xl"
-                    ></div>
-                )}
-            </div>
+            <Link href={{
+                pathname: '/project/[name]',
+                query: {name, thumbnail}
+            }}>
+                <a>
+                    <div className="w-full h-52 sm:w-80 sm:h-52 shrink-0">
+                        {thumbnail && (
+                            <div
+                                style={{
+                                    backgroundImage: `url(${thumbnail})`,
+                                    height: '100%',
+                                    width: '100%',
+                                    backgroundSize: 'cover',
+                                }}
+                                className="rounded-xl"
+                            ></div>
+                        )}
+                    </div>
+                </a>
+            </Link>
         </div>
     );
 };
