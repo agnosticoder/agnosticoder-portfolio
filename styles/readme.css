@@ -1,0 +1,38 @@
+.readme{
+    ins{
+        @apply text-base mb-4 block;
+    },
+    table{
+        @apply text-base mb-4;
+        td{
+            @apply px-4 py-2 border-[1.5px] border-stone-300;
+        }
+    }
+    &>p{
+        @apply mb-4;
+    }
+    &>img{
+        @apply mb-4;
+    },
+    ol{
+        @apply mb-4 list-decimal pl-8;
+        ol{
+            @apply list-[lower-roman];
+        }
+        ul{
+            @apply list-[square];
+        }
+    },
+    ul{
+        @apply mb-4 list-disc pl-8;
+        ul{
+            @apply list-[square];
+        }
+    },
+    blockquote{
+        @apply bg-stone-800/60;
+        blockquote{
+            @apply bg-transparent;
+        }
+    }
+}

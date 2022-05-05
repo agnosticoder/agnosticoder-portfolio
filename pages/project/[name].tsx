@@ -1,5 +1,4 @@
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import { HTMLAttributes, useMemo } from 'react';
+import { GetServerSideProps } from 'next';
 import { ProjectCardProps } from '../../components/ProjectCard';
 import getGithubRepo from '../../lib/getGithubRepo';
 import Image from 'next/image';
@@ -32,10 +31,10 @@ const Project = ({ name, description, link, url, thumbnail, mdxSource, ...rest }
             </ul>
             {mdxSource && (
                 <div>
-                    {/* <h1>{mdxSource?.frontmatter?.title}</h1>
-                    <p>{mdxSource?.frontmatter?.descriptions}</p> */}
-                    <div className="border-2 border-stone-300 mt-6 mb-96 p-2">
-                        <MDXRemote {...mdxSource}/>
+                    <h1>{mdxSource?.frontmatter?.title}</h1>
+                    <p>{mdxSource?.frontmatter?.description}</p>
+                    <div className="border-2 border-stone-300 mt-6 mb-96 p-2 readme">
+                        <MDXRemote {...mdxSource} components={MDXComponents as any}/>
                     </div>
                 </div>
             )}

@@ -10,6 +10,11 @@ description: This is some description
 #### Heading 4
 ##### Heading 5
 
+www.example.com
+
+:dog:
+:cat:
+
 **Heading 5 Bold: The quick brown fox jumps over the lazy dog.**
 
 *Italic: The quick brown fox jumps over the lazy dog.*
@@ -30,11 +35,13 @@ description: This is some description
 > **The quick brown fox** *jumps over the lazy dog.*
 
 Monospaced
+
 \`\`The quick brown fox jumps over the lazy dog\`\`
 
 <ins>The quick brown fox jumps over the lazy dog.</ins>
 
 Boxed
+
 <table><tr><td>The quick brown fox jumps over the lazy dog.</td></tr></table>
 
 Subscript <sub>The quick brown fox jumps over the lazy dog.</sub>
@@ -94,6 +101,8 @@ Ordered List with sub-list
 
 Unordered list:
 * 1
+    * Second level
+        * third level
 * 2
 * 3
 
@@ -103,10 +112,7 @@ Task List
 - [ ] Add unit tests
 
 ---
-***
-___
 
-:octocat:
 `.trim();
 
 export default mdxString;

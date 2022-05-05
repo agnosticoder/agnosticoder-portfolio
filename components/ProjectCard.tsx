@@ -9,7 +9,7 @@ export interface ProjectCardProps {
     url: string;
     thumbnail?: string;
     topics?: string[];
-    mdxSource?: MDXRemoteSerializeResult;
+    mdxSource?: MDXRemoteSerializeResult<Record<string, unknown>>;
 }
 
 const ProjectCard = ({ index, name, description, link, url, thumbnail }: ProjectCardProps) => {

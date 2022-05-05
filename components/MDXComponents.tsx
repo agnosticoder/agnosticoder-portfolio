@@ -1,4 +1,4 @@
-import { MDXProviderComponentsProp } from "@mdx-js/react";
+import { ReactNode } from "react";
 
 const Heading1 = ({ children }: { children: string }) => (
     <h1 className="text-4xl font-semibold mb-3">
@@ -39,18 +39,38 @@ const Italic = ({ children }: { children: string }) => (
 );
 
 const Blockquote = ({ children }: { children: string }) => (
-    <blockquote className="bg-stone-800 font-light text-stone-400 text-base border-l-4 border-stone-700 pl-8 mb-2 rounded">{children}</blockquote>
+    <blockquote className="font-light text-stone-400 text-base border-l-4 border-stone-700 pl-8 mb-2 rounded">{children}</blockquote>
 );
 
 const Code = ({ children, ...rest }: { children: string }) => (
-    <code {...rest} className="text-base">{children}</code>
+    <code {...rest} className="text-base bg-stone-600 p-[1px] rounded">{children}</code>
 );
 
-const Ins = ({ children, ...rest }: { children: string }) => (
-    <ins {...rest} className="text-base">{children}</ins>
+const Anchor = ({ children, ...rest }: { children: string }) => (
+    <a {...rest} className="text-base hover:underline text-blue-400">{children}</a>
 );
 
-const MDXComponents:MDXProviderComponentsProp = {
+const Paragraph = ({ children, ...rest }: { children: string }) => (
+    <p {...rest} className="text-base mb-4">{children}</p>
+);
+
+const Pre = ({ children, ...rest }: { children: string }) => (
+    <div className="mb-4">
+        <pre {...rest} className="">{children}</pre>
+    </div>
+);
+
+const Image = ({ ...rest }: { src: string }) => (
+    <p className="mb-4">
+        <img {...rest}/>
+    </p>
+);
+
+const Hr = () => (
+    <hr className="border-t-2 border-stone-300 mb-6 mt-6"/>
+);
+
+const MDXComponents = {
     h1: Heading1,
     h2: Heading2,
     h3: Heading3,
@@ -59,8 +79,12 @@ const MDXComponents:MDXProviderComponentsProp = {
     strong: Strong,
     em: Italic,
     blockquote: Blockquote,
-    ins: Ins,
     code: Code,
+    a: Anchor,
+    p: Paragraph,
+    pre: Pre,
+    img: Image,
+    hr: Hr
 };
 
 export default MDXComponents;
