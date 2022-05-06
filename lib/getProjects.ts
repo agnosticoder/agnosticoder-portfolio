@@ -12,14 +12,14 @@ const getProjects = async () => {
         let projects = await getGithubRepos();
         const photos = await client.photos.search({
             query: 'animals',
-            page: 3,
+            page: 6,
             per_page: projects.length,
             orientation: 'landscape',
             size: 'small',
         });
 
         if (isPhotosWithTotalResults(photos)) {
-            const photosData = photos.photos.map((photo) => ({ thumbnail: photo.src.large2x, photoId: photo.id }));
+            const photosData = photos.photos.map((photo) => ({ thumbnail: photo.src.large, photoId: photo.id }));
             if (photosData.length === projects.length) {
                 projects = projects.map((project: ProjectCardProps, index: number) => {
                     return {
@@ -29,7 +29,6 @@ const getProjects = async () => {
                 });
             }
         }
-        console.log('projects', projects);
         return projects;
     } catch (err) {
         console.log({ err });

@@ -8,7 +8,6 @@ interface GetBundledMDXProps {
 }
 
 const getMDXSource = async ({ source = mdxString }: GetBundledMDXProps) => {
-    console.log('source', source);
     const mdxSource = await serialize(source, {parseFrontmatter: true, mdxOptions: {remarkPlugins: [emoji, remarkGfm]}});
     return mdxSource;
 };

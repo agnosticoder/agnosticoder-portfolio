@@ -5,6 +5,7 @@ import Image from 'next/image';
 import getMDXSource from '../../lib/getMDXSource';
 import MDXComponents from '../../components/MDXComponents';
 import { MDXRemote } from 'next-mdx-remote';
+import getReadme from '../../lib/getReadme';
 
 const Ins = ({children, ...rest}:{children: string}) => (
     <div style={{fontSize: 'small'}} {...rest}>Yo</div>
@@ -33,7 +34,7 @@ const Project = ({ name, description, link, url, thumbnail, mdxSource, ...rest }
                 <div>
                     <h1>{mdxSource?.frontmatter?.title}</h1>
                     <p>{mdxSource?.frontmatter?.description}</p>
-                    <div className="border-2 border-stone-300 mt-6 mb-96 p-2 readme">
+                    <div className="bg-stone-800/40 mt-6 mb-12 p-2 pt-4 pb-4 readme rounded">
                         <MDXRemote {...mdxSource} components={MDXComponents as any}/>
                     </div>
                 </div>
@@ -45,8 +46,8 @@ const Project = ({ name, description, link, url, thumbnail, mdxSource, ...rest }
 export default Project;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-    const mdxSource = await getMDXSource({});
     const { name, thumbnail } = query as { name: string; thumbnail: string };
+
 
     // if no name is provided, return 404
     if (!name) {
@@ -54,6 +55,10 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
             notFound: true,
         };
     }
+
+    console.log('name:', name);
+    const readme = await getReadme(name);
+    const mdxSource = await getMDXSource({source: readme});
 
     const project = await getGithubRepo(name);
     // if no project is found, return 404

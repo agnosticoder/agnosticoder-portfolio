@@ -9,13 +9,13 @@
         }
     }
     &>p{
-        @apply mb-4;
+        @apply mb-4 text-base;
     }
     &>img{
-        @apply mb-4;
+        @apply mb-4 text-base;
     },
     ol{
-        @apply mb-4 list-decimal pl-8;
+        @apply mb-4 list-decimal pl-8 text-base;
         ol{
             @apply list-[lower-roman];
         }
@@ -24,7 +24,7 @@
         }
     },
     ul{
-        @apply mb-4 list-disc pl-8;
+        @apply mb-4 list-disc pl-8 text-base;
         ul{
             @apply list-[square];
         }
@@ -32,6 +32,11 @@
     blockquote{
         @apply bg-stone-800/60;
         blockquote{
+            @apply bg-transparent;
+        }
+    },
+    pre{
+        code{
             @apply bg-transparent;
         }
     }

@@ -1,0 +1,89 @@
+import { FormEvent, useState} from "react";
+import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillInstagram, AiOutlineMail } from 'react-icons/ai';
+import {BiCopy} from 'react-icons/bi';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
+const Contact = () => {
+    const [copied, setCopied] = useState(false);
+
+    const onSend = (e:FormEvent) => {
+        e.preventDefault();
+        console.log('Getting in touch...');
+    }
+
+
+    return (
+        <div className="mt-16">
+            <form className="w-full rounded-lg items-center mb-20" onSubmit={onSend}>
+                <h1 className="text-yellow-600 text-xl text-center font-semibold sm:px-12 mb-8">Get in Touch</h1>
+                <div className="sm:px-12 pb-10">
+                    <div className="w-full mb-6">
+                        <div className="flex justify-center">
+                            <input className="px-8  w-full border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center" type='text' placeholder="Name" />
+                        </div>
+                    </div>
+                    <div className="w-full mb-6">
+                        <div className="flex justify-center">
+                            <input className="px-8  w-full border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center" type='text' placeholder="Email" />
+                        </div>
+                    </div>
+                    <div className="w-full mb-6">
+                        <div className="flex justify-center">
+                            <textarea className="resize-none px-8 w-full h-52 border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        className="w-full bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">Send</button>
+                </div>
+            </form>
+
+
+            {/* <div className="flex flex-col justify-center items-center">
+                <span className="text-xs text-yellow-500/60 py-1 px-2 bg-yellow-800/60 rounded">OR</span>
+                <span>Email me at</span>
+            </div> */}
+
+
+            <div className="text-center text-sm mb-2 text-yellow-600">Send me an email</div>
+            <div className="flex justify-center text-center mb-44">
+                <CopyToClipboard text="agnosticoder@gmail.com" onCopy={() => setCopied(true)}>
+                    <div className="relative w-80 bg-transparent text-yellow-700 font-semibold py-8 px-4 border border-yellow-500 hover:bg-yellow-500/10 rounded cursor-pointer">
+                        <span title="copy email" className="text-yellow-500 border-b-[1px] border-yellow-500 border-dashed">agnosticoder@gmail.com</span>
+                        {copied ?
+                            <span>
+                                <span className="absolute top-2 right-7 font-normal text-xs">copied</span>
+                                <BiCopy className="absolute top-2 right-2" />
+                            </span>
+                            :
+                            <span>
+                                <span className="absolute top-2 right-7 font-normal text-xs">copy</span>
+                                <BiCopy className="absolute top-2 right-2" />
+                            </span>
+                        }
+                    </div>
+                </CopyToClipboard>
+            </div>
+
+
+            <div className="flex justify-center gap-4 text-3xl">
+                <a title="github" href='https://github.com/agnosticoder' target='github'>
+                    <AiFillGithub />
+                </a>
+                <a title="linkedin" href='https://www.linkedin.com/in/agnonsticoder/' target='linkedin'>
+                    <AiFillLinkedin />
+                </a>
+                <a title="twitter" href='https://twitter.com/agnosticoder' target='twitter'>
+                    <AiFillTwitterCircle />
+                </a>
+                <a title="instagram" href='https://www.instagram.com/satinder_singh_taak/' target='instagram'>
+                    <AiFillInstagram />
+                </a>
+                <a title='email' href='mailto:agnosticoder@gmail.com'>
+                    <AiOutlineMail />
+                </a>
+            </div>
+        </div>
+    );
+}
+
+export default Contact;

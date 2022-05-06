@@ -43,7 +43,7 @@ const Blockquote = ({ children }: { children: string }) => (
 );
 
 const Code = ({ children, ...rest }: { children: string }) => (
-    <code {...rest} className="text-base bg-stone-600 p-[1px] rounded">{children}</code>
+    <code {...rest} className="bg-stone-600 p-[1px] rounded text-sm">{children}</code>
 );
 
 const Anchor = ({ children, ...rest }: { children: string }) => (
@@ -55,7 +55,7 @@ const Paragraph = ({ children, ...rest }: { children: string }) => (
 );
 
 const Pre = ({ children, ...rest }: { children: string }) => (
-    <div className="mb-4">
+    <div className="mb-4 bg-stone-600/60 p-4">
         <pre {...rest} className="">{children}</pre>
     </div>
 );
