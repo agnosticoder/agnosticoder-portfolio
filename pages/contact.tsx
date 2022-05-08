@@ -1,4 +1,4 @@
-import { FormEvent, useState} from "react";
+import { FormEvent, useEffect, useState} from "react";
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillInstagram, AiOutlineMail } from 'react-icons/ai';
 import {BiCopy} from 'react-icons/bi';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -11,31 +11,44 @@ const Contact = () => {
         console.log('Getting in touch...');
     }
 
+    useEffect(() => {
+        if(copied) {
+            setTimeout(() => {
+                setCopied(false);
+            }
+            , 2000);
+        }
+    }, [copied]);
 
     return (
         <div className="mt-16">
+            {/* <h1>
+                <div>See this video for sendGrid API</div>
+                <div>May be use mailjet.com</div>
+                <a href='https://www.youtube.com/watch?v=QrVYLLpoyMw&t=1s'>https://www.youtube.com/watch?v=QrVYLLpoyMw&t=1s</a>
+            </h1>
             <form className="w-full rounded-lg items-center mb-20" onSubmit={onSend}>
                 <h1 className="text-yellow-600 text-xl text-center font-semibold sm:px-12 mb-8">Get in Touch</h1>
                 <div className="sm:px-12 pb-10">
                     <div className="w-full mb-6">
                         <div className="flex justify-center">
-                            <input className="px-8  w-full border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center" type='text' placeholder="Name" />
+                            <input className="px-8  w-full border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center placeholder:text-stone-500" type='text' placeholder="Name" />
                         </div>
                     </div>
                     <div className="w-full mb-6">
                         <div className="flex justify-center">
-                            <input className="px-8  w-full border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center" type='text' placeholder="Email" />
+                            <input className="px-8  w-full border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center placeholder:text-stone-500" type='text' placeholder="Email" />
                         </div>
                     </div>
                     <div className="w-full mb-6">
                         <div className="flex justify-center">
-                            <textarea className="resize-none px-8 w-full h-52 border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center" placeholder="Message"></textarea>
+                            <textarea className="resize-none px-8 w-full h-52 border rounded py-2 text-stone-700 bg-stone-300 focus:outline-none items-center placeholder:text-stone-500" placeholder="Message"></textarea>
                         </div>
                     </div>
                     <button type="submit"
                         className="w-full bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">Send</button>
                 </div>
-            </form>
+            </form> */}
 
 
             {/* <div className="flex flex-col justify-center items-center">
@@ -45,7 +58,7 @@ const Contact = () => {
 
 
             <div className="text-center text-sm mb-2 text-yellow-600">Send me an email</div>
-            <div className="flex justify-center text-center mb-44">
+            <div className="flex justify-center text-center mb-32">
                 <CopyToClipboard text="agnosticoder@gmail.com" onCopy={() => setCopied(true)}>
                     <div className="relative w-80 bg-transparent text-yellow-700 font-semibold py-8 px-4 border border-yellow-500 hover:bg-yellow-500/10 rounded cursor-pointer">
                         <span title="copy email" className="text-yellow-500 border-b-[1px] border-yellow-500 border-dashed">agnosticoder@gmail.com</span>

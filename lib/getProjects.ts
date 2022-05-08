@@ -1,7 +1,7 @@
 import { PhotosWithTotalResults } from 'pexels';
 import { ProjectCardProps } from '../components/ProjectCard';
 import getGithubRepos from './getGithubRepos';
-import { client } from './pexelsClient';
+import { pexelClient } from './pexelsClient';
 
 const isPhotosWithTotalResults = (photos: any): photos is PhotosWithTotalResults => {
     return 'total_results' in photos;
@@ -10,7 +10,8 @@ const isPhotosWithTotalResults = (photos: any): photos is PhotosWithTotalResults
 const getProjects = async () => {
     try {
         let projects = await getGithubRepos();
-        const photos = await client.photos.search({
+        console.log('projects', projects);
+        const photos = await pexelClient.photos.search({
             query: 'animals',
             page: 6,
             per_page: projects.length,

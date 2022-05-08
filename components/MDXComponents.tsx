@@ -42,10 +42,6 @@ const Blockquote = ({ children }: { children: string }) => (
     <blockquote className="font-light text-stone-400 text-base border-l-4 border-stone-700 pl-8 mb-2 rounded">{children}</blockquote>
 );
 
-const Code = ({ children, ...rest }: { children: string }) => (
-    <code {...rest} className="bg-stone-600 p-[1px] rounded text-sm">{children}</code>
-);
-
 const Anchor = ({ children, ...rest }: { children: string }) => (
     <a {...rest} className="text-base hover:underline text-blue-400">{children}</a>
 );
@@ -55,9 +51,11 @@ const Paragraph = ({ children, ...rest }: { children: string }) => (
 );
 
 const Pre = ({ children, ...rest }: { children: string }) => (
-    <div className="mb-4 bg-stone-600/60 p-4">
-        <pre {...rest} className="">{children}</pre>
-    </div>
+    <pre {...rest} className="mb-4 p-3 bg-stone-800/80 overflow-x-auto rounded-md">{children}</pre>
+);
+
+const Code = ({ children, ...rest }: { children: string }) => (
+    <code {...rest} className="bg-stone-600 rounded text-sm">{children}</code>
 );
 
 const Image = ({ ...rest }: { src: string }) => (

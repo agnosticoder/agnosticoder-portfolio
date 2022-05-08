@@ -21,6 +21,7 @@ const getGithubRepos = async () => {
                 issues: repo.open_issues,
                 updated: repo.updated_at,
                 created: repo.created_at,
+                topics: repo.topics,
             };
         });
 
