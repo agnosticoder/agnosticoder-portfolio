@@ -1,0 +1,25 @@
+.transition-in{
+    animation: inAnimation .1s ease-in;
+}
+
+.transition-out{
+    animation: outAnimation .1s ease-in;
+}
+
+@keyframes inAnimation {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes outAnimation {
+  0%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

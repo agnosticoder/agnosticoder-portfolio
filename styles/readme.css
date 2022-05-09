@@ -9,7 +9,7 @@
         }
     }
     &>p{
-        @apply mb-4 text-base;
+        @apply mb-4 text-base leading-relaxed tracking-wide;
     }
     &>img{
         @apply mb-4 text-base;

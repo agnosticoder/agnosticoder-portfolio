@@ -1,24 +1,47 @@
 import { createContext, useContext, useMemo, useReducer, useState } from 'react';
 
-interface makeStoreProviderProps{
-    init: any,
-    children: JSX.Element
-}
-
-const makeStore = () => {
-    const Context = createContext<any>(null);
+const makeStore2 = <T,>() => {
+    const Context = createContext<T>(undefined!);
     const useStore = () => useContext(Context);
 
-    const Provider = ({ init = {}, children }: makeStoreProviderProps) => {
+    const Provider = ({init, children }: {init: T, children: React.ReactNode }) => {
         const [state, setState] = useState(init);
-        // console.log('makeStore');
 
         const contextValue = useMemo(() => [state, setState], [state]);
 
         return <Context.Provider value={contextValue}>{children}</Context.Provider>;
+    }
+
+}
+
+interface makeStoreProviderProps<T>{
+    init: T,
+    children: JSX.Element
+}
+
+const makeStore = <T,S>() => {
+    const useValueContext = createContext();
+    const setValueContext = createContext();
+
+    const useValue = () => useContext(useValueContext);
+    const useSetValue = () => useContext(setValueContext);
+
+    const Provider = <T,>({ init , children }: makeStoreProviderProps<T>) => {
+        const [state, setState] = useState(init);
+        // console.log('makeStore');
+
+        const storeState = useMemo(() => state, [state]);
+        const setStore = useMemo(() => setState, []);
+
+        return (
+            <useValueContext.Provider value={storeState}>
+                <setValueContext.Provider value={setStore}>
+                    {children}
+                </setValueContext.Provider>
+            </useValueContext.Provider>);
     };
 
-    return [Provider, useStore];
+    return [Provider, useValue, useSetValue] as const;
 };
 
 export default makeStore;

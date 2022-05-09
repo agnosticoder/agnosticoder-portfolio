@@ -1,55 +1,59 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle, AiOutlineMail } from 'react-icons/ai';
+import MobileNav from '../components/MobileNav';
 import NavLink from '../components/NavLink';
-import backgroundSVG from '../public/background.svg';
 
 const Layout: FC = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const onMenuClick = () => {
-        setIsOpen(!isOpen);
-    }
 
     return (
         <>
             <Head>
                 <title>App Title will go here</title>
             </Head>
-            <div className="text-stone-300 bg-stone-900 min-h-screen w-screen relative pt-32 pb-60">
+            <div className={`text-stone-300 bg-stone-900 min-h-screen w-screen relative pt-32 pb-60`}>
                 {/* //? should I undo this */}
                 {/* <div className="inset-0 -z-10 fixed">
                 <img className="object-cover w-screen h-screen" src={backgroundSVG.src} alt="Background SVG" />
             </div> */}
                 <header className='fixed top-0 z-50 w-full bg-stone-900'>
-                    <div className="relative bg-green-500/50 bg-stone-900 w-11/12 sm:max-w-3xl mx-auto pt-2 sm:pt-8">
+
+                    <div className="bg-stone-900 w-11/12 sm:max-w-3xl mx-auto pt-2 sm:pt-8">
                         <div className="min-h-20 pb-4 flex items-end justify-between flex-wrap">
-                            <NavLink path="/">
-                                <h1 className="text-5xl text-stone-300 break-words list-none">
-                                    <span className="text-yellow-500">A</span>gnosti
-                                    <span className="text-yellow-500">c</span>oder
-                                </h1>
-                            </NavLink>
-                            <nav>
-                                <button onClick={onMenuClick} className={`absolute right-[4px] top-[25px] sm:invisible ${isOpen ? 'text-yellow-500' : 'text-yellow-500/80'}`}>Menu</button>
-                                {isOpen && (
-                                    <div className='bg-yellow-500/20 sm:bg-green-200 absolute right-0 top-40 sm:static'>
-                                        <ul className="flex gap-4 text-yellow-500/80 uppercase font-light tracking-tighter">
-                                            {/* <NavLink path="/work">
+                            <Link href="/">
+                                <a>
+                                    <h1 className="text-4xl sm:text-5xl text-stone-300 break-words list-none">
+                                        <span className="text-yellow-500">A</span>gnosti
+                                        <span className="text-yellow-500">c</span>oder
+                                    </h1>
+                                </a>
+                            </Link>
+
+                            {/* mobile navigation */}
+                            <MobileNav />
+
+                            {/* desktop navigation */}
+                            <nav className='hidden sm:block'>
+                                <div>
+                                    <ul className="flex gap-4 text-yellow-500/80 uppercase font-light tracking-tighter">
+                                        {/* <NavLink path="/work">
                                 <span>Start Working</span>
                             </NavLink> */}
-                                            <NavLink path="/mystory">
-                                                <span className='hover:text-yellow-500'>My Story</span>
-                                            </NavLink>
-                                            <NavLink path="/contact">
-                                                <span className='hover:text-yellow-500'>Contact</span>
-                                            </NavLink>
-                                        </ul>
-                                    </div>
-                                )}
+                                        <NavLink path="/">
+                                            <span className='hover:text-yellow-500'>Home</span>
+                                        </NavLink>
+                                        <NavLink path="/mystory">
+                                            <span className='hover:text-yellow-500'>My Story</span>
+                                        </NavLink>
+                                        <NavLink path="/contact">
+                                            <span className='hover:text-yellow-500'>Contact</span>
+                                        </NavLink>
+                                    </ul>
+                                </div>
                             </nav>
+
                         </div>
                     </div>
                 </header>
@@ -66,9 +70,13 @@ const Layout: FC = ({ children }) => {
                                 </h1>
                             </div>
                             <div>
-                                <ul>
-                                    <NavLink path="/mystory">About Me</NavLink>
-                                    <NavLink path="/contact">Contact</NavLink>
+                                <ul className='list-none'>
+                                    <li>
+                                        <Link href='/mystory'><a>My Story</a></Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/contact"><a>Contact</a></Link>
+                                    </li>
                                 </ul>
                             </div>
                             <div>

@@ -1,18 +1,7 @@
-import Project, { ProjectCardProps } from './ProjectCard';
-import { useEffect, useLayoutEffect, useState } from 'react';
-import getReadmes from '../lib/getReadme';
-import getProjects from '../lib/getProjects';
+import Project from './ProjectCard';
+import { IndexProps } from '../pages';
 
-const App = () => {
-    const [projects, setProjects] = useState<ProjectCardProps[]>([]);
-
-    useEffect(() => {
-        // getReadmes();
-        getProjects()
-            .then((projects) => setProjects(projects))
-            .catch((err) => console.log(err));
-    }, []);
-
+const App = ({projects}: IndexProps) => {
     return (
         <div className="text-stone-300">
             <div className="mb-32 mt-20">

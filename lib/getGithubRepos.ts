@@ -42,6 +42,7 @@ const getGithubRepos = async () => {
         //14,15 solana-web3-front-end   &&  solana-web3-back-end 
         //16, 17 fitness-app-next-frontend && fitness-app-backend 
         //18 react-firebase-authentication
+
         const projects = ['react-border-radius-previewer', 'react-calculator', 'react-coundown-timer', 'next-mint-username-nft', 'next-mdx-notes-app', 'next-wave-portal-hardhat-web3', 'solana-web3-front-end', 'solana-web3-back-end', 'fitness-app-next-frontend', 'react-csv-to-json-and-vice-versa'];
 
         const projects2 = [{repoName: 'fitness-app-next-frontend', name: 'Workout Logging App'}];
