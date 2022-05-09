@@ -52,10 +52,10 @@ const MobileNav = () => {
             )}
 
             {isOpen && (
+                //Todo: transition-out not working, make it work later
                 <div
                     ref={clickOutSideRef}
-                    style={{ backdropFilter: 'blur(15px)' }}
-                    className={`${isMounted ? 'transition-in' : 'transition-out'} pt-20 bg-opacity-50 z-10 bg-stone-700 h-screen absolute right-0 top-0 left-1/4 sm:static border-l-[1px] border-stone-600/50`}
+                    className={`${isMounted ? 'transition-in' : 'transition-out'} pt-20 z-10 bg-stone-700 h-screen absolute right-0 top-0 left-1/4 sm:static border-l-[1px] border-stone-600/50`}
                     onAnimationEnd={() => { if (!isMounted) setIsOpen(false) }}>
 
                     <ul className="text-center h-full mx-auto text-2xl text-yellow-500/80 uppercase">
