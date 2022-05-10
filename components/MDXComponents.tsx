@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactNode } from "react";
+import { HTMLProps, ReactNode } from "react";
 
 const Heading1 = ({ children }: { children: string }) => (
     <h1 className="text-4xl font-semibold mb-3">
@@ -73,8 +73,7 @@ const List = ({ children, ...rest }: { children: ReactNode }) => (
     <li {...rest} className="mb-3">{children}</li>
 );
 
-const CustomLink = (props) => {
-    const href = props.href;
+const CustomLink = ({children, href, ...props}:HTMLProps<HTMLAnchorElement>) => {
     const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
     console.log('href:', href);
@@ -82,13 +81,13 @@ const CustomLink = (props) => {
     if (isInternalLink) {
       return (
         <Link href={href}>
-          <a className="text-base hover:underline text-yellow-400" {...props}>{props.children}</a>
+          <a className="text-base hover:underline text-yellow-400" {...props}>{children}</a>
         </Link>
       );
     }
-  
+
     return <a className="text-base hover:underline text-blue-400" target="_blank" rel="noopener noreferrer" {...props} />;
-  };
+};
 
 
 const MDXComponents = {
