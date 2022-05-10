@@ -5,7 +5,7 @@ const App = ({projects}: IndexProps) => {
     return (
         <div className="text-stone-300">
             <div className="mb-32 mt-20">
-                <h1 className="text-3xl font-light text-center mb-16 leading-loose tracking-wide">
+                <h1 className="text-3xl font-light text-center mb-16 leading-relaxed sm:leading-loose tracking-wide">
                     I am <span className="text-yellow-600">Satinder Singh</span>, software developer from Toronto,
                     Canada. I like to play with Typescript, Next.js, Prisma, Tailwind CSS, Node.js and more. See my work below.
                 </h1>

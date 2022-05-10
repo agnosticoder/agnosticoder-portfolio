@@ -49,7 +49,7 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail, topics}: 
                             </span>
                         ))}
                     </div>
-                    <div className={`flex gap-1 ${index % 2 ? '' : 'sm:justify-end'}`}>
+                    <div className={``}>
                         {/* {url && (
                             <div>
                                 <a target={name} href={url}>
@@ -81,7 +81,7 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail, topics}: 
                             query: { name, thumbnail }
                         }}>
                             <a>
-                                <span className="inline-block bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">Learn More</span>
+                                <span className="text-center block sm:inline-block bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">Learn More</span>
                             </a>
                         </Link>
                     </div>

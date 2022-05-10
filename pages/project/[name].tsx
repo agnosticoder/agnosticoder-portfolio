@@ -21,7 +21,7 @@ const Project = ({name, description, link, url, thumbnail, mdxSource, ...rest }:
                     alt="Project Thumbnail"
                 />
             </div>
-            <div className='inline-flex gap-2 mb-8'>
+            <div className='inline-flex gap-2 mb-16'>
                 {url && (
                     <a target={name} href={url}>
                         <span className="inline-block bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
@@ -43,13 +43,13 @@ const Project = ({name, description, link, url, thumbnail, mdxSource, ...rest }:
                     </a>
                 )}
             </div>
-            <h2 className="text-xl mb-4 font text-yellow-600 text-center">Readme</h2>
+            <h2 className="text-xl font mb-4 text-yellow-600 text-center">Readme</h2>
             {mdxSource && (
                 <div>
                     {/* //Todo: Figure out if I need frontmatter or not */}
                     {/* <h1>{mdxSource?.frontmatter?.title}</h1>
                     <p>{mdxSource?.frontmatter?.description}</p> */}
-                    <div className="bg-stone-800/40 mt-6 mb-12 p-2 pt-4 pb-4 readme rounded">
+                    <div className="bg-stone-800/40 mb-12 p-2 pt-4 pb-4 readme rounded">
                         <MDXRemote {...mdxSource} components={MDXComponents as any} />
                     </div>
                 </div>

@@ -11,9 +11,9 @@ const Layout: FC = ({ children }) => {
     return (
         <>
             <Head>
-                <title>App Title will go here</title>
+                <title>Agnosticoder</title>
             </Head>
-            <div className={`text-stone-300 bg-stone-900 min-h-screen w-screen relative pt-32 pb-60`}>
+            <div className={`text-stone-300 bg-stone-900 min-h-screen w-screen relative pt-16 sm:pt-32 pb-60`}>
                 {/* //? should I undo this */}
                 {/* <div className="inset-0 -z-10 fixed">
                 <img className="object-cover w-screen h-screen" src={backgroundSVG.src} alt="Background SVG" />
@@ -44,8 +44,8 @@ const Layout: FC = ({ children }) => {
                                         <NavLink path="/">
                                             <span className='hover:text-yellow-500'>Home</span>
                                         </NavLink>
-                                        <NavLink path="/mystory">
-                                            <span className='hover:text-yellow-500'>My Story</span>
+                                        <NavLink path="/aboutme">
+                                            <span className='hover:text-yellow-500'>About Me</span>
                                         </NavLink>
                                         <NavLink path="/contact">
                                             <span className='hover:text-yellow-500'>Contact</span>
@@ -72,7 +72,7 @@ const Layout: FC = ({ children }) => {
                             <div>
                                 <ul className='list-none'>
                                     <li>
-                                        <Link href='/mystory'><a>My Story</a></Link>
+                                        <Link href='/aboutme'><a>About Me</a></Link>
                                     </li>
                                     <li>
                                         <Link href="/contact"><a>Contact</a></Link>

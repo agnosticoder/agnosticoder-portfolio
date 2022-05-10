@@ -65,8 +65,8 @@ const MobileNav = () => {
                         <NavLink path="/">
                             <span onClick={onCloseClick} className='hover:text-yellow-500 block py-4 border-y-[1px] border-yellow-600'>Home</span>
                         </NavLink>
-                        <NavLink path="/mystory">
-                            <span onClick={onCloseClick} className='hover:text-yellow-500 block py-4 border-b-[1px] border-yellow-600'>My Story</span>
+                        <NavLink path="/aboutme">
+                            <span onClick={onCloseClick} className='hover:text-yellow-500 block py-4 border-b-[1px] border-yellow-600'>About Me</span>
                         </NavLink>
                         <NavLink path="/contact">
                             <span onClick={onCloseClick} className='hover:text-yellow-500 block py-4 border-b-[1px] border-yellow-600'>Contact</span>
