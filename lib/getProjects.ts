@@ -10,7 +10,6 @@ const isPhotosWithTotalResults = (photos: any): photos is PhotosWithTotalResults
 const getProjects = async () => {
     try {
         let projects = await getGithubRepos();
-        console.log('projects', projects);
         const photos = await pexelClient.photos.search({
             query: 'animals',
             page: 6,

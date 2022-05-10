@@ -57,7 +57,7 @@ const Contact = () => {
             </div> */}
 
 
-            <div className="text-center text-sm mb-2 text-yellow-600">Send me an email</div>
+            <div className="text-center text-sm mb-2 text-stone-300/70">Send me an email</div>
             <div className="flex justify-center text-center mb-32">
                 <CopyToClipboard text="agnosticoder@gmail.com" onCopy={() => setCopied(true)}>
                     <div className="relative w-80 bg-transparent text-yellow-700 font-semibold py-8 px-4 border border-yellow-500 hover:bg-yellow-500/10 rounded cursor-pointer">

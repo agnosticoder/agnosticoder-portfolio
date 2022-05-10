@@ -1,14 +1,35 @@
+import { GetServerSideProps } from "next";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Link from "next/link";
+import { serialize } from "next-mdx-remote/serialize";
+import MDXComponents from "../components/MDXComponents";
+import { aboutMe } from "../db/aboutMe";
 
-const AboutMe = () => {
+interface AboutMeProps{
+    mdxSource: MDXRemoteSerializeResult;
+}
+
+const AboutMe = ({mdxSource}:AboutMeProps) => {
+
     return (
         <div>
-            <h2>Write your brief description that leads to full story for those who are more interested in knowing me</h2>
-            <Link href='mystory'>
-                <a className="text-yellow-500/80 hover:text-yellow-500">My Story</a>
-            </Link>
+            <h1 className="text-xl font-bold font mb-4 text-stone-300/70 text-center">About me</h1>
+            <div className="bg-stone-800/40 mt-6 mb-12 p-2 pt-4 pb-4 readme rounded">
+                <MDXRemote {...mdxSource} components={MDXComponents as any} />
+            </div>
         </div>
     );
 }
 
 export default AboutMe;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+
+    const mdxSource = await serialize(aboutMe);
+
+    return {
+        props: {
+            mdxSource: JSON.parse(JSON.stringify(mdxSource)),
+        },
+    }
+}

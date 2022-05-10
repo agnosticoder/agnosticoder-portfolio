@@ -6,11 +6,10 @@ const App = ({projects}: IndexProps) => {
         <div className="text-stone-300">
             <div className="mb-16 sm:mb-32 mt-20">
                 <h1 className="text-2xl sm:text-3xl font-light text-center mb-16 leading-relaxed sm:leading-loose tracking-wide">
-                    Hi 👋🏽, I am <span className="text-yellow-600">Satinder Singh</span>, self taught software developer from Toronto,
-                    Canada. I like to play with Typescript, Next.js, Prisma, Tailwind CSS, Node.js and more. See my work below.
+                    Hi 👋🏽, I am <span className="text-yellow-600">Satinder Singh</span>, a self-taught software developer from Toronto. I like to build stuff on the web. See my work below.
                 </h1>
             </div>
-            <div className='text-yellow-600 text-center italic text-sm border-b-[1px] border-yellow-600/30'>
+            <div className='text-stone-300/70 text-center italic text-sm border-b-[1px] border-stone-300/30'>
                 Projects
             </div>
             <div className="text-lg flex flex-col items-center mt-10">

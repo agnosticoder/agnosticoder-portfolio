@@ -43,7 +43,7 @@ const MyStory = ({ mdxSource }: MyStoryProps) => {
 
     return (
         <div>
-            <h1 className="text-yellow-600 text-xl text-center font-semibold sm:px-12 mb-8">My Story</h1>
+            <h1 className="text-stone-300/70 text-xl text-center font-semibold sm:px-12 mb-8">My Story</h1>
             <div className="w-full h-52 sm:h-96 relative mb-4">
                 {thumbnail && (
                     <Image

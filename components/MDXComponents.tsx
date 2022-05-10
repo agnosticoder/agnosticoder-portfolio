@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ReactNode } from "react";
 
 const Heading1 = ({ children }: { children: string }) => (
@@ -68,6 +69,28 @@ const Hr = () => (
     <hr className="border-t-2 border-stone-300 mb-6 mt-6"/>
 );
 
+const List = ({ children, ...rest }: { children: ReactNode }) => (
+    <li {...rest} className="mb-3">{children}</li>
+);
+
+const CustomLink = (props) => {
+    const href = props.href;
+    const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+
+    console.log('href:', href);
+  
+    if (isInternalLink) {
+      return (
+        <Link href={href}>
+          <a className="text-base hover:underline text-yellow-400" {...props}>{props.children}</a>
+        </Link>
+      );
+    }
+  
+    return <a className="text-base hover:underline text-blue-400" target="_blank" rel="noopener noreferrer" {...props} />;
+  };
+
+
 const MDXComponents = {
     h1: Heading1,
     h2: Heading2,
@@ -78,11 +101,13 @@ const MDXComponents = {
     em: Italic,
     blockquote: Blockquote,
     code: Code,
-    a: Anchor,
+    // a: Anchor,
+    a: CustomLink,
     p: Paragraph,
     pre: Pre,
     img: Image,
-    hr: Hr
+    hr: Hr,
+    li: List,
 };
 
 export default MDXComponents;

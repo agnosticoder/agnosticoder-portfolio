@@ -43,7 +43,7 @@ const Project = ({name, description, link, url, thumbnail, mdxSource, ...rest }:
                     </a>
                 )}
             </div>
-            <h2 className="text-xl font mb-4 text-yellow-600 text-center">Readme</h2>
+            <h2 className="text-xl font-bold mb-4 text-stone-300/70 text-center">Readme</h2>
             {mdxSource && (
                 <div>
                     {/* //Todo: Figure out if I need frontmatter or not */}
