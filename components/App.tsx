@@ -2,6 +2,8 @@ import Project from './ProjectCard';
 import { IndexProps } from '../pages';
 
 const App = ({projects}: IndexProps) => {
+
+
     return (
         <div className="text-stone-300">
             <div className="mb-16 sm:mb-32 mt-20">

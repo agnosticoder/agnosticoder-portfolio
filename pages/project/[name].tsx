@@ -8,6 +8,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import getReadme from '../../lib/getReadme';
 
 const Project = ({name, description, link, url, thumbnail, mdxSource, ...rest }: ProjectCardProps) => {
+    console.log('link', link);
 
     return (
         <div className="text-lg mt-4">
@@ -23,24 +24,25 @@ const Project = ({name, description, link, url, thumbnail, mdxSource, ...rest }:
             </div>
             <div className='inline-flex gap-2 mb-16'>
                 {url && (
-                    <a target={name} href={url}>
+                    <a target="_blank" rel="noopener noreferrer" href={url}>
                         <span className="inline-block bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
                             Gihub
                         </span>
                     </a>
                 )}
                 {link ? (
-                    <a target={name} href={link}>
+                    <a target="_blank" rel="noopener noreferrer" href={`${link}`}>
                         <span className="inline-block bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
                             Live Demo
                         </span>
                     </a>
                 ) : (
-                    <a href="#">
-                        <span className="inline-block bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
-                            Live Demo
-                        </span>
-                    </a>
+                    // <a href="#">
+                    //     <span className="inline-block bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
+                    //         Live Demo
+                    //     </span>
+                    // </a>
+                    null
                 )}
             </div>
             <h2 className="text-xl font-bold mb-4 text-stone-300/70 text-center">Readme</h2>

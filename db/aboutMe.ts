@@ -1,16 +1,16 @@
 export const aboutMe = `
-Hey, I am Satinder Singh. I live in Toronto, Canada. My love and passion are to make software for the web. I self-taught myself to code. Prior to that, I did Bachelor's in Mechanical Engineering, Postgrad in Supply Chain Management and Window Cleaning. My journey to coding has been a roller coaster. Read my full story [here](/mystory)
+Hey, I am Satinder Singh. I am 28 years old and I live in Toronto, Canada. My passion is to make software for the web. I am self-taught. Before that, I did a Bachelor's in Mechanical Engineering and a Postgrad in Supply Chain Management. My journey to coding has been a roller coaster. Please read my full story [here](/mystory)
 
 ### Education
 
-- Bachelor in Mechanical Engineering from GZS Punjab Technical University, Bathinda (PB), India
+- Bachelor in Mechanical Engineering from Punjab Technical University (Pb), India
 - Postgraduate Diploma in Supply Chain Management from Lambton College, Toronto, Canada.
 
 ### Tech Stack
 
-- Frontend - Next.js, Typescript
-- Backend - Node.js, Typescript
-- Database - Prisma, mostly SQLite
+- Typescript
+- Next.js
+- Node.js
+- Database - Prisma
 - Styling - Tailwind CSS and Sass
-- and more...
 `.trim();
