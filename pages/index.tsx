@@ -14,6 +14,7 @@ const Home = ({projects}:IndexProps) => {
     return (
         <>
             <App projects={projects}/>
+            <div className='mx-20 text-center italic text-sm'>Many projects are on the way, please visit my <a className='text-yellow-500' href='https://github.com/agnosticoder' target='_blank' rel='noopener noreferrer'>github</a> account to see the projects I am working on inluding web3 projects</div>
         </>
     );
 };
