@@ -12,7 +12,7 @@ const getProjects = async () => {
         let projects = await getGithubRepos();
         const photos = await pexelClient.photos.search({
             query: 'animals',
-            page: 6,
+            page: 4,
             per_page: projects.length,
             orientation: 'landscape',
             size: 'small',

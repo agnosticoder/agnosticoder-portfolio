@@ -86,7 +86,7 @@ const CustomLink = ({children, href, ...props}:HTMLProps<HTMLAnchorElement>) => 
       );
     }
 
-    return <a className="text-base hover:underline text-blue-400" target="_blank" rel="noopener noreferrer" {...props} />;
+    return <a href={href} className="text-base hover:underline text-blue-400 cursor-pointer" target="_blank" rel="noopener noreferrer" {...props} >{children}</a>;
 };
 
 

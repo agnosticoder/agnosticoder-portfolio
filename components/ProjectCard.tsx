@@ -42,7 +42,7 @@ const ProjectCard = ({ index, name, description, link, url, thumbnail, topics}: 
                     ) : (
                         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, consectetur.</h2>
                     )}
-                    <div className={`flex ${index % 2 ? 'sm:justify-start' : 'sm:justify-end'} gap-1`}>
+                    <div className={`flex ${index % 2 ? 'sm:justify-start' : 'sm:justify-end'} gap-1 flex-wrap`}>
                         {topics?.map((topic, index) => (
                             <span key={index} className="px-1 py-[2px] rounded-md text-xs font-medium text-yellow-100/70 bg-yellow-600/50">
                                 {topic}
