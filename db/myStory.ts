@@ -36,4 +36,4 @@ This part of my life was immigration. Although coding was and is the sole purpos
 
 ## Home Run
 
-Now, this is the present and I quit my window cleaning job and devoted myself to full-time learning code. I saved some cash from my window cleaning job's pay that would help me with my expenses during my learning. I am very hopeful that I would be able to secure an entry-level position before I completely exhaust my savings (lol 😜). But even if I do exhaust my savings, it doesn't matter, it won't stop me`.trim();
+Now, this is the present and I quit my window cleaning job and devoted myself to full-time learning code. I saved some cash from my window cleaning job's pay that would help me with my expenses during my learning. I am very hopeful that I would be able to secure an entry-level position before I completely exhaust my savings (lol 😜). But even if I do exhaust my savings, it doesn't matter, it won't stop me.`.trim();
