@@ -58,7 +58,7 @@ const Contact = () => {
 
 
             <div className="text-center text-sm mb-2 text-stone-300/70">Send me an email</div>
-            <div className="flex justify-center text-center mb-32">
+            <div className="flex justify-center text-center mb-16">
                 <CopyToClipboard text="agnosticoder@gmail.com" onCopy={() => setCopied(true)}>
                     <div className="relative w-80 bg-transparent text-yellow-700 font-semibold py-8 px-4 border border-yellow-500 hover:bg-yellow-500/10 rounded cursor-pointer">
                         <span title="copy email" className="text-yellow-500 border-b-[1px] border-yellow-500 border-dashed">agnosticoder@gmail.com</span>
@@ -75,6 +75,14 @@ const Contact = () => {
                         }
                     </div>
                 </CopyToClipboard>
+            </div>
+
+            <div className='text-xs italic text-center text-stone-300/70 mb-4'>OR</div>
+            <div className='text-center mb-20 flex justify-center items-center'>
+                <span className='mr-2 text-yellow-500 border-b-[1px] border-yellow-500 border-dashed'>Ping me on Twitter</span>
+                <a className='inline-block text-blue-500' title="twitter" href='https://twitter.com/agnosticoder' target='twitter'>
+                    <AiFillTwitterCircle size={30}/>
+                </a>
             </div>
 
 
