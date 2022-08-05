@@ -4,6 +4,7 @@
 @import "tailwindcss/components";
 @import "./readme.css";
 @import "./mobileNav.css";
+@import "./nprogress.css";
 
 @import "tailwindcss/utilities";
 /* @import "./custom-utilities.css"; */
