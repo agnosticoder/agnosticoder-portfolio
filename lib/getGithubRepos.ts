@@ -43,9 +43,7 @@ const getGithubRepos = async () => {
         //16, 17 fitness-app-next-frontend && fitness-app-backend 
         //18 react-firebase-authentication
 
-        const projects = ['next-mdx-blog-app', 'fitness-app-next-frontend','agnosticoder-portfolio'];
-
-        const projects2 = [{repoName: 'fitness-app-next-frontend', name: 'Workout Logging App'}];
+        const projects = ['next-mdx-blog-app', 'fitness-app-next-frontend'];
 
         //ProjectCardProps type aren't exactly the same as the repo, may need a fix
         const filteredRepos = repos.filter((repo: ProjectCardProps) => {

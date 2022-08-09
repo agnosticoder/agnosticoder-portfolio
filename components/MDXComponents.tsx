@@ -75,8 +75,6 @@ const List = ({ children, ...rest }: { children: ReactNode }) => (
 
 const CustomLink = ({children, href, ...props}:HTMLProps<HTMLAnchorElement>) => {
     const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
-
-    console.log('href:', href);
   
     if (isInternalLink) {
       return (
