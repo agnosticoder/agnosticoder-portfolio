@@ -24,9 +24,9 @@ const Layout: FC = ({ children }) => {
                         <div className="min-h-20 pb-4 flex items-end justify-between flex-wrap">
                             <Link href="/">
                                 <a>
-                                    <h1 className="text-4xl sm:text-5xl text-stone-300 break-words list-none">
-                                        <span className="text-yellow-500">A</span>gnosti
-                                        <span className="text-yellow-500">c</span>oder
+                                    <h1 className="font-light text-4xl sm:text-4xl text-stone-300 break-words list-none">
+                                        <span className="text-yellow-500">S</span>atinder
+                                        <span className="text-yellow-500 ml-2">S</span>ingh
                                     </h1>
                                 </a>
                             </Link>
@@ -65,8 +65,8 @@ const Layout: FC = ({ children }) => {
                         <div className='flex flex-col gap-4 items-center sm:items-start sm:flex-row justify-between w-11/12 sm:max-w-3xl mx-auto'>
                             <div>
                                 <h1 className="text-3xl text-stone-300 break-words list-none">
-                                    <span className="text-yellow-500">A</span>gnosti
-                                    <span className="text-yellow-500">c</span>oder
+                                    <span className="text-yellow-500">S</span>atinder
+                                    <span className="text-yellow-500 ml-1">S</span>ingh
                                 </h1>
                             </div>
                             <div>
